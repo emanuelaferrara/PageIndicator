@@ -35,21 +35,32 @@ class NewPageControl: UIPageControl {
         }
         let startPoint = subviews[currentPage].frame.origin
         let segno = Int(progress/abs(progress))
+        let pro = abs(progress)
         var endIndex = (currentPage + segno)%self.numberOfPages
         if(endIndex < 0) {
-            endIndex = 0
+            endIndex = numberOfPages - 1
         }
         let endPoint = subviews[endIndex].frame.origin
         
         let distanceToCover = endPoint - startPoint
-
         
-        if(progress <= 0.5) {
-             nuovo.frame.size.width =  subviews[currentPage].frame.size.width + distanceToCover.x * progress * 2
+        if endIndex < currentPage {
+            if(pro <= 0.5) {
+                nuovo.frame.size.width =  subviews[currentPage].frame.size.width + -distanceToCover.x * pro * 2
+                nuovo.frame.origin.x = subviews[currentPage].frame.origin.x + distanceToCover.x * (pro*2)
+            }
+            else {
+                nuovo.frame.size.width = subviews[currentPage].frame.size.width + -distanceToCover.x * (2 - pro * 2)
+            }
         }
         else {
-            nuovo.frame.size.width = subviews[currentPage].frame.size.width + distanceToCover.x * (2 - progress * 2)
-            nuovo.frame.origin.x = subviews[currentPage].frame.origin.x + distanceToCover.x * (progress*2 - 1)
+            if(pro <= 0.5) {
+                nuovo.frame.size.width =  subviews[currentPage].frame.size.width + distanceToCover.x * pro * 2
+            }
+            else {
+                nuovo.frame.size.width = subviews[currentPage].frame.size.width + distanceToCover.x * (2 - pro * 2)
+                nuovo.frame.origin.x = subviews[currentPage].frame.origin.x + distanceToCover.x * (pro*2 - 1)
+            }
         }
     }
     
