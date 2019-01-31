@@ -14,6 +14,8 @@
 		E3D099012200DE4A003115EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D098FF2200DE4A003115EA /* LaunchScreen.storyboard */; };
 		E3D0990C2200DE4B003115EA /* PageIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D0990B2200DE4B003115EA /* PageIndicatorTests.swift */; };
 		E3D099172200DE4B003115EA /* PageIndicatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D099162200DE4B003115EA /* PageIndicatorUITests.swift */; };
+		E3D099272200E128003115EA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D099262200E128003115EA /* PageViewController.swift */; };
+		E3D099292200E37B003115EA /* NewPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D099282200E37B003115EA /* NewPageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		E3D099122200DE4B003115EA /* PageIndicatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PageIndicatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D099162200DE4B003115EA /* PageIndicatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorUITests.swift; sourceTree = "<group>"; };
 		E3D099182200DE4B003115EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D099262200E128003115EA /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		E3D099282200E37B003115EA /* NewPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		E3D098F52200DE4A003115EA /* PageIndicator */ = {
 			isa = PBXGroup;
 			children = (
+				E3D099262200E128003115EA /* PageViewController.swift */,
+				E3D099282200E37B003115EA /* NewPageControl.swift */,
 				E3D098F62200DE4A003115EA /* AppDelegate.swift */,
 				E3D098F82200DE4A003115EA /* ViewController.swift */,
 				E3D098FA2200DE4A003115EA /* Main.storyboard */,
@@ -256,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D099272200E128003115EA /* PageViewController.swift in Sources */,
 				E3D098F92200DE4A003115EA /* ViewController.swift in Sources */,
 				E3D098F72200DE4A003115EA /* AppDelegate.swift in Sources */,
+				E3D099292200E37B003115EA /* NewPageControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SE443R2ZU8;
 				INFOPLIST_FILE = PageIndicator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SE443R2ZU8;
 				INFOPLIST_FILE = PageIndicator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
