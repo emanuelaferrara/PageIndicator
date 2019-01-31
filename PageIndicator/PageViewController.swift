@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource,/* UIViewControllerAnimatedTransitioning */{
+class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource/*, UIViewControllerAnimatedTransitioning */{
     
 //    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
 //        print(<#T##items: Any...##Any#>)
