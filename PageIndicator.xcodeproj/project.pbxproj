@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6133010B220374A800FF2A6A /* FilledPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6133010A220374A800FF2A6A /* FilledPageControl.swift */; };
 		E3C24D362203682B00E403D0 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C24D352203682B00E403D0 /* DesignableView.swift */; };
 		E3D098F72200DE4A003115EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D098F62200DE4A003115EA /* AppDelegate.swift */; };
 		E3D098F92200DE4A003115EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D098F82200DE4A003115EA /* ViewController.swift */; };
@@ -38,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6133010A220374A800FF2A6A /* FilledPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledPageControl.swift; sourceTree = "<group>"; };
 		E3C24D352203682B00E403D0 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		E3D098F32200DE4A003115EA /* PageIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D098F62200DE4A003115EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 				E3D099282200E37B003115EA /* NewPageControl.swift */,
 				E3D098F62200DE4A003115EA /* AppDelegate.swift */,
 				E3D098F82200DE4A003115EA /* ViewController.swift */,
-				6133010A220374A800FF2A6A /* FilledPageControl.swift */,
 				E3D098FA2200DE4A003115EA /* Main.storyboard */,
 				E3D098FD2200DE4A003115EA /* Assets.xcassets */,
 				E3D098FF2200DE4A003115EA /* LaunchScreen.storyboard */,
@@ -268,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6133010B220374A800FF2A6A /* FilledPageControl.swift in Sources */,
 				E3D099272200E128003115EA /* PageViewController.swift in Sources */,
 				E3D098F92200DE4A003115EA /* ViewController.swift in Sources */,
 				E3D098F72200DE4A003115EA /* AppDelegate.swift in Sources */,
