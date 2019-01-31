@@ -20,13 +20,6 @@ class NewPageControl: UIPageControl {
             }
         }
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     func updateDot() {
         if nuovo.frame.origin.x < subviews[currentPage].frame.origin.x {
@@ -93,6 +86,13 @@ class NewPageControl: UIPageControl {
         nuovo.backgroundColor = .white
         nuovo.layer.cornerRadius = f.layer.cornerRadius
         self.addSubview(nuovo)
+        
+        
+        self.addTarget(self, action: #selector(move), for: .touchDragInside)
+    }
+    
+    @objc func move() {
+        print("MOVE")
     }
 }
 
