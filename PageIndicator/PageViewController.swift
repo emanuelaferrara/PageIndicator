@@ -8,16 +8,9 @@
 
 import UIKit
 
-class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource/*, UIViewControllerAnimatedTransitioning */{
+class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource{
     
-//    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-//        print(<#T##items: Any...##Any#>)
-//    }
-//
-//    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-//        <#code#>
-//    }
-    
+    var pageControl = NewPageControl()
     
     // MARK: Data source functions.
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -72,24 +65,22 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
                 self.newVc(viewController: "sbGreen")]
     }()
     
-    var pageControl = NewPageControl()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.dataSource = self
-        
-        // This sets up the first view that will show up on our page control
-        if let firstViewController = orderedViewControllers.first {
-            setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
-        }
-        
-        self.delegate = self
-        configurePageControl()
-        
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        self.dataSource = self
+//
+//        // This sets up the first view that will show up on our page control
+//        if let firstViewController = orderedViewControllers.first {
+//            setViewControllers([firstViewController],
+//                               direction: .forward,
+//                               animated: true,
+//                               completion: nil)
+//        }
+//
+//        self.delegate = self
+//        configurePageControl()
+//    }
     
     func newVc(viewController: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: viewController)
@@ -109,5 +100,39 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = orderedViewControllers.index(of: pageContentViewController)!
+    }
+}
+
+
+extension PageViewController: UIScrollViewDelegate {
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.dataSource = self
+        
+        // This sets up the first view that will show up on our page control
+        if let firstViewController = orderedViewControllers.first {
+            setViewControllers([firstViewController],
+                               direction: .forward,
+                               animated: true,
+                               completion: nil)
+        }
+        
+        self.delegate = self
+        configurePageControl()
+        
+        for subview in view.subviews {
+            if let scrollView = subview as? UIScrollView {
+                scrollView.delegate = self
+            }
+        }
+    }
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let point = scrollView.contentOffset
+        var percentComplete: CGFloat
+        percentComplete = (point.x - view.frame.size.width)/view.frame.size.width
+        self.pageControl.progress = percentComplete
     }
 }

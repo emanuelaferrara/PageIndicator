@@ -13,11 +13,43 @@ class NewPageControl: UIPageControl {
     var first = true;
     var defaultSize = CGSize.zero
     var animationDuration = 0.4
+    var progress: CGFloat = 0 {
+        didSet {
+            print(progress)
+            updateAnimation()
+        }
+    }
+    
     override var currentPage: Int {
         didSet {
             if(currentPage != oldValue) {
-                updateDot()
+                //updateDot()
+                print("ciao")
             }
+        }
+    }
+    
+    func updateAnimation() {
+        guard progress != 0 else {
+            return
+        }
+        let startPoint = subviews[currentPage].frame.origin
+        let segno = Int(progress/abs(progress))
+        var endIndex = (currentPage + segno)%self.numberOfPages
+        if(endIndex < 0) {
+            endIndex = 0
+        }
+        let endPoint = subviews[endIndex].frame.origin
+        
+        let distanceToCover = endPoint - startPoint
+
+        
+        if(progress <= 0.5) {
+             nuovo.frame.size.width =  subviews[currentPage].frame.size.width + distanceToCover.x * progress * 2
+        }
+        else {
+            nuovo.frame.size.width = subviews[currentPage].frame.size.width + distanceToCover.x * (2 - progress * 2)
+            nuovo.frame.origin.x = subviews[currentPage].frame.origin.x + distanceToCover.x * (progress*2 - 1)
         }
     }
     
