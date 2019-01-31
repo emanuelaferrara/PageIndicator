@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ITH-dA-LzS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ITH-dA-LzS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,11 +21,19 @@
         <scene sceneID="mQq-5l-9c6">
             <objects>
                 <viewController storyboardIdentifier="sbBlue" id="hFv-cw-eMP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BCO-Hw-6sR">
+                    <view key="view" contentMode="scaleToFill" id="BCO-Hw-6sR" customClass="DesignableView" customModule="PageIndicator" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.60885721445083618" green="0.90870493650436401" blue="0.72938966751098633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="7TD-rY-MKQ"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientColor1">
+                                <color key="value" red="0.74061572551727295" green="0.95740658044815063" blue="0.65485382080078125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientColor2">
+                                <color key="value" red="0.44038832187652588" green="0.83067739009857178" blue="0.8588327169418335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brv-Kq-ulP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -36,11 +44,19 @@
         <scene sceneID="BjM-Ck-rkk">
             <objects>
                 <viewController storyboardIdentifier="sbRed" id="ZvW-tR-aci" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LqL-TX-KBM">
+                    <view key="view" contentMode="scaleToFill" id="LqL-TX-KBM" customClass="DesignableView" customModule="PageIndicator" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.9385790228843689" green="0.57177329063415527" blue="0.3803417980670929" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="B2g-dZ-gBQ"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientColor1">
+                                <color key="value" red="0.97037476301193237" green="0.88312894105911255" blue="0.5646432638168335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientColor2">
+                                <color key="value" red="0.93856996299999995" green="0.56388521189999996" blue="0.3764205873" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAW-Sv-HpO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -51,11 +67,25 @@
         <scene sceneID="WVv-8j-N8C">
             <objects>
                 <viewController storyboardIdentifier="sbGreen" id="b9q-SY-KXp" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YcL-Iw-1yo">
+                    <view key="view" contentMode="scaleToFill" id="YcL-Iw-1yo" customClass="DesignableView" customModule="PageIndicator" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.90006750822067261" green="0.24105066061019897" blue="0.56080096960067749" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="wxH-i1-Z51"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientColor1">
+                                <color key="value" red="0.91142058370000001" green="0.23784112930000001" blue="0.45490658280000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientColor2">
+                                <color key="value" red="0.87470275159999999" green="0.26899924870000003" blue="0.90200537439999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="point" keyPath="gradientStartPoint">
+                                <point key="value" x="0.0" y="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="point" keyPath="gradientEndPoint">
+                                <point key="value" x="1" y="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqN-VK-HwR" userLabel="First Responder" sceneMemberID="firstResponder"/>
