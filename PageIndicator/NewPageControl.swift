@@ -113,6 +113,7 @@ class NewPageControl: UIPageControl {
         if first {
             defaultSize = f.frame.size
             nuovo.frame.origin = f.frame.origin
+            print("Pallino: ", nuovo.frame)
             first = false
         }
     }
@@ -129,7 +130,6 @@ class NewPageControl: UIPageControl {
         nuovo.backgroundColor = .white
         nuovo.layer.cornerRadius = f.layer.cornerRadius
         self.addSubview(nuovo)
-        
         
         self.addTarget(self, action: #selector(move), for: .touchDragInside)
     }
