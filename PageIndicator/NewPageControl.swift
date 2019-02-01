@@ -15,7 +15,7 @@ class NewPageControl: UIPageControl {
     var animationDuration = 0.4
     var progress: CGFloat = 0 {
         didSet {
-            print(progress)
+            //print(progress)
             updateAnimation()
         }
     }
@@ -24,7 +24,7 @@ class NewPageControl: UIPageControl {
         didSet {
             if(currentPage != oldValue) {
                 //updateDot()
-                print("ciao")
+                //print("ciao")
             }
         }
     }
@@ -135,7 +135,7 @@ class NewPageControl: UIPageControl {
     }
     
     @objc func move() {
-        print("MOVE")
+        //print("MOVE")
     }
 }
 

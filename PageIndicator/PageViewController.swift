@@ -101,6 +101,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = orderedViewControllers.index(of: pageContentViewController)!
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.pageControl.frame.origin = CGPoint(x: 0,y: UIScreen.main.bounds.maxY - 50)
+    }
 }
 
 
