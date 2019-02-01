@@ -38,7 +38,6 @@ import UIKit
     
     private func setGradient()
     {
-
         gradientLayer.colors = [self.gradientColor1.cgColor, self.gradientColor2.cgColor]
         gradientLayer.startPoint = self.gradientStartPoint
         gradientLayer.endPoint = self.gradientEndPoint
