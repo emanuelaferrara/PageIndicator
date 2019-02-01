@@ -95,11 +95,18 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         self.pageControl.pageIndicatorTintColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.5)
         self.pageControl.currentPageIndicatorTintColor = UIColor.black
         self.view.addSubview(pageControl)
+        setupBottomControls()
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = orderedViewControllers.index(of: pageContentViewController)!
+    }
+    
+    private func setupBottomControls(){
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
 }
 

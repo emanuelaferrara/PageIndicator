@@ -15,7 +15,7 @@ class NewPageControl: UIPageControl {
     var animationDuration = 0.4
     var progress: CGFloat = 0 {
         didSet {
-            print(progress)
+            //print(progress)
             updateAnimation()
         }
     }
@@ -24,7 +24,7 @@ class NewPageControl: UIPageControl {
         didSet {
             if(currentPage != oldValue) {
                 //updateDot()
-                print("ciao")
+                //print("ciao")
             }
         }
     }
@@ -113,6 +113,7 @@ class NewPageControl: UIPageControl {
         if first {
             defaultSize = f.frame.size
             nuovo.frame.origin = f.frame.origin
+            print("Pallino: ", nuovo.frame)
             first = false
         }
     }
@@ -130,12 +131,11 @@ class NewPageControl: UIPageControl {
         nuovo.layer.cornerRadius = f.layer.cornerRadius
         self.addSubview(nuovo)
         
-        
         self.addTarget(self, action: #selector(move), for: .touchDragInside)
     }
     
     @objc func move() {
-        print("MOVE")
+        //print("MOVE")
     }
 }
 
