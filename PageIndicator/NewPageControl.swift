@@ -23,7 +23,7 @@ class NewPageControl: UIPageControl {
     override var currentPage: Int {
         didSet {
             if(currentPage != oldValue) {
-                //updateDot()
+                updateDot()
                 //print("ciao")
             }
         }
@@ -73,6 +73,7 @@ class NewPageControl: UIPageControl {
     }
     
     func leftAnimation() {
+        print("Left\n")
         let pos = subviews[currentPage].frame.origin
         let differenza =  pos - nuovo.frame.origin
         
@@ -86,9 +87,11 @@ class NewPageControl: UIPageControl {
                 self.nuovo.frame.size = self.defaultSize
             })
         }
+                print(nuovo.frame.origin)
     }
     
     func rightAnimation() {
+        print("Right\n")
         let pos = subviews[currentPage].frame.origin
         let differenza =  pos - nuovo.frame.origin
 
@@ -102,6 +105,7 @@ class NewPageControl: UIPageControl {
                 self.nuovo.frame.size = self.defaultSize
             })
         }
+                print(nuovo.frame.origin)
     }
     
     override func layoutSubviews() {
