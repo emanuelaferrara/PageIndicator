@@ -9,140 +9,119 @@
 import UIKit
 
 class NewPageControl: UIPageControl {
-    var nuovo = UIView()
-    var first = true;
-    var defaultSize = CGSize.zero
-    var animationDuration = 0.4
+    var indicator = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     var progress: CGFloat = 0 {
         didSet {
-            //print(progress)
-            updateAnimation()
+            updateIndicator()
+        }
+    }
+    
+    override var currentPageIndicatorTintColor:UIColor? {
+        get {
+            return indicator.backgroundColor
+        }
+        set {
+            indicator.backgroundColor = newValue
+        }
+    }
+    
+    override var pageIndicatorTintColor:UIColor? {
+        set {
+            super.pageIndicatorTintColor = newValue
+            super.currentPageIndicatorTintColor = super.pageIndicatorTintColor
+        }
+        get {
+            return super.pageIndicatorTintColor
         }
     }
     
     override var currentPage: Int {
         didSet {
-            if(currentPage != oldValue) {
-                updateDot()
-                //print("ciao")
-            }
+            updateCurrentPage()
         }
     }
     
-    func updateAnimation() {
+    func updateIndicator() {
         guard progress != 0 else {
             return
         }
-        let startPoint = subviews[currentPage].frame.origin
-        let segno = Int(progress/abs(progress))
-        let pro = abs(progress)
-        var endIndex = (currentPage + segno)%self.numberOfPages
-        if(endIndex < 0) {
-            endIndex = numberOfPages - 1
-        }
-        let endPoint = subviews[endIndex].frame.origin
         
-        let distanceToCover = endPoint - startPoint
+        let direction = Int(progress/abs(progress))
+        let current = self.currentPage
+        var next:Int = (self.currentPage + direction)%self.numberOfPages
+        next = next < 0 ? numberOfPages-1 : next
         
-        if endIndex < currentPage {
-            if(pro <= 0.5) {
-                nuovo.frame.size.width =  subviews[currentPage].frame.size.width + -distanceToCover.x * pro * 2
-                nuovo.frame.origin.x = subviews[currentPage].frame.origin.x + distanceToCover.x * (pro*2)
+        let distance = subviews[next].frame.origin - subviews[current].frame.origin
+        
+        let progressAbs = abs(progress)
+        
+        if next > current {
+            if(progressAbs <= 0.5) {
+                let newWidth = subviews[current].frame.size.width + distance.x * progressAbs * 2
+                indicator.frame = CGRect(origin: subviews[current].frame.origin,
+                                          size: CGSize(width: newWidth,
+                                                       height: subviews[current].frame.size.height))
             }
             else {
-                nuovo.frame.size.width = subviews[currentPage].frame.size.width + -distanceToCover.x * (2 - pro * 2)
+                let newWidth = subviews[current].frame.size.width + distance.x * (2 - progressAbs * 2)
+                let newX = subviews[current].frame.origin.x + distance.x * (progressAbs*2 - 1)
+                indicator.frame = CGRect(x: newX,
+                                          y: subviews[next].frame.origin.y,
+                                          width: newWidth,
+                                          height: subviews[next].frame.size.height)
             }
         }
         else {
-            if(pro <= 0.5) {
-                nuovo.frame.size.width =  subviews[currentPage].frame.size.width + distanceToCover.x * pro * 2
+            if(progressAbs <= 0.5) {
+                let newWidth = subviews[current].frame.size.width + -distance.x * progressAbs * 2
+                let newX = subviews[current].frame.origin.x + distance.x * (progressAbs*2)
+                indicator.frame = CGRect(x: newX,
+                                          y: subviews[current].frame.origin.y,
+                                          width: newWidth,
+                                          height: subviews[current].frame.size.height)
             }
             else {
-                nuovo.frame.size.width = subviews[currentPage].frame.size.width + distanceToCover.x * (2 - pro * 2)
-                nuovo.frame.origin.x = subviews[currentPage].frame.origin.x + distanceToCover.x * (pro*2 - 1)
+                let newWidth = subviews[current].frame.size.width + -distance.x * (2 - progressAbs * 2)
+                indicator.frame = CGRect(origin: subviews[next].frame.origin,
+                                          size: CGSize(width: newWidth,
+                                                       height: subviews[next].frame.size.height))
             }
         }
     }
-    
-    func updateDot() {
-        if nuovo.frame.origin.x < subviews[currentPage].frame.origin.x {
-            rightAnimation()
-        } else {
-            leftAnimation()
-        }
-    }
-    
-    func leftAnimation() {
-        print("Left\n")
-        let pos = subviews[currentPage].frame.origin
-        let differenza =  pos - nuovo.frame.origin
-        
-        UIView.animate(withDuration: animationDuration/2, delay: 0, options: .curveEaseOut, animations: {
-            self.nuovo.frame.size.width += abs(differenza.x)
-            self.nuovo.frame.size.height += abs(differenza.y)
-            self.nuovo.frame.origin = pos
-        }) { (result) in
-            UIView.animate(withDuration: self.animationDuration/2, animations: {
-                [unowned self] in
-                self.nuovo.frame.size = self.defaultSize
-            })
-        }
-                print(nuovo.frame.origin)
-    }
-    
-    func rightAnimation() {
-        print("Right\n")
-        let pos = subviews[currentPage].frame.origin
-        let differenza =  pos - nuovo.frame.origin
 
-        UIView.animate(withDuration: animationDuration/2, delay: 0, options: .curveEaseOut, animations: {
-            self.nuovo.frame.size.width += differenza.x
-            self.nuovo.frame.size.height += differenza.y
-        }) { (result) in
-            UIView.animate(withDuration: self.animationDuration/2, animations: {
-                [unowned self] in
-                self.nuovo.frame.origin = pos
-                self.nuovo.frame.size = self.defaultSize
-            })
+    func updateCurrentPage() {
+        if(currentPage >= 0 && currentPage < numberOfPages && indicator.frame.size != .zero){
+            indicator.frame = subviews[currentPage].frame
         }
-                print(nuovo.frame.origin)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        indicator.backgroundColor = super.currentPageIndicatorTintColor
+        super.currentPageIndicatorTintColor = super.pageIndicatorTintColor
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        indicator.backgroundColor = super.currentPageIndicatorTintColor
+        super.currentPageIndicatorTintColor = super.pageIndicatorTintColor
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        guard let f = subviews.first else {
-            return
+        
+        if indicator.frame.size.width == 0{
+            guard let f = subviews.first else {
+                return
+            }
+            indicator.frame = f.frame
+            indicator.layer.cornerRadius = f.layer.cornerRadius
+            self.addSubview(indicator)
         }
-        
-        if first {
-            defaultSize = f.frame.size
-            nuovo.frame.origin = f.frame.origin
-            print("Pallino: ", nuovo.frame)
-            first = false
-        }
-    }
-    
-    override func didMoveToWindow() {
-        super.didMoveToWindow()
-        guard let f = subviews.first else {
-            return
-        }
-        
-        self.currentPageIndicatorTintColor = self.pageIndicatorTintColor
-        
-        nuovo = UIView(frame: f.frame);
-        nuovo.backgroundColor = .white
-        nuovo.layer.cornerRadius = f.layer.cornerRadius
-        self.addSubview(nuovo)
-        
-        self.addTarget(self, action: #selector(move), for: .touchDragInside)
-    }
-    
-    @objc func move() {
-        //print("MOVE")
     }
 }
-
 
 public func - (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x - right.x, y: left.y - right.y)

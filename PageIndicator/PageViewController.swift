@@ -11,7 +11,15 @@ import UIKit
 class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource{
     
     var pageControl = NewPageControl()
+    var scrollLock: Bool = true
     
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        scrollLock = false
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        scrollLock = true
+    }
     // MARK: Data source functions.
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
@@ -64,23 +72,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
                 self.newVc(viewController: "sbRed"),
                 self.newVc(viewController: "sbGreen")]
     }()
-    
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        self.dataSource = self
-//
-//        // This sets up the first view that will show up on our page control
-//        if let firstViewController = orderedViewControllers.first {
-//            setViewControllers([firstViewController],
-//                               direction: .forward,
-//                               animated: true,
-//                               completion: nil)
-//        }
-//
-//        self.delegate = self
-//        configurePageControl()
-//    }
+
     
     func newVc(viewController: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: viewController)
@@ -90,17 +82,19 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         // The total number of pages that are available is based on how many available colors we have.
         pageControl = NewPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
         self.pageControl.numberOfPages = orderedViewControllers.count
-        self.pageControl.currentPage = 0
-        self.pageControl.tintColor = UIColor.black
+        self.pageControl.tintColor = UIColor.red
         self.pageControl.pageIndicatorTintColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.5)
-        self.pageControl.currentPageIndicatorTintColor = UIColor.black
+        self.pageControl.currentPageIndicatorTintColor = UIColor.white
+        self.pageControl.currentPage = 0
         self.view.addSubview(pageControl)
         setupBottomControls()
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
-        self.pageControl.currentPage = orderedViewControllers.index(of: pageContentViewController)!
+        if completed {
+            self.pageControl.currentPage = orderedViewControllers.index(of: pageContentViewController)!
+        }
     }
     
     private func setupBottomControls(){
@@ -126,9 +120,10 @@ extension PageViewController: UIScrollViewDelegate {
                                completion: nil)
         }
         
-        self.delegate = self
-        configurePageControl()
         
+        self.delegate = self
+        
+        configurePageControl()
         for subview in view.subviews {
             if let scrollView = subview as? UIScrollView {
                 scrollView.delegate = self
@@ -137,9 +132,9 @@ extension PageViewController: UIScrollViewDelegate {
     }
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let point = scrollView.contentOffset
-        var percentComplete: CGFloat
-        percentComplete = (point.x - view.frame.size.width)/view.frame.size.width
-        self.pageControl.progress = percentComplete
+        if scrollLock {
+            let progress: CGFloat = (scrollView.contentOffset.x - view.frame.size.width)/view.frame.size.width
+            self.pageControl.progress = progress
+        }
     }
 }
