@@ -1,6 +1,6 @@
-# Project Title
+# Page Control Transition
 
-One Paragraph of project description goes here
+This is a custom animated Page Control, made in Swift. You can use it in place of the UIPageControl in your app.
 
 ## Getting Started
 
@@ -16,21 +16,7 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+To use this Page Control, just add the file 'PageIndicator' to your project.
 
 ## Running the tests
 
