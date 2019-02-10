@@ -7,7 +7,7 @@ This is an animated  subclass of UIPageControl, made in Swift. You can use it in
 Inspired by [Oleg Frolov dribbble creation](https://dribbble.com/shots/5254763-Page-Indicator-Exploration)
 
 
-<img src="PageIndicator/Images/PageIndicator.gif">
+<img src="Images/PageIndicator.gif">
 
 ## Requirements
 
@@ -18,12 +18,6 @@ Inspired by [Oleg Frolov dribbble creation](https://dribbble.com/shots/5254763-P
 ## Installing
 
 To use this Page Control, just add the file 'AnimatedPageControl' to your project.
-
-Then in your PageViewController you can simply add:
-
-``` swift
-var pageControl = AnimatedPageControl()
-```
 
 You can also take a look to the PageViewController in this project to correct initialize the custom PageControl.
 
