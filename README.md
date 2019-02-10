@@ -11,7 +11,7 @@ This is a custom animated Page Control, made in Swift. You can use it in place o
 
 To use this Page Control, just add the file 'AnimatedPageControl' to your project.
 
-Then in your PageViewController you simply can add:
+Then in your PageViewController you can simply add:
 
 ``` swift
 var pageControl = AnimatedPageControl()
