@@ -1,25 +1,25 @@
 # Animated Page Control
 
-This is a custom animated Page Control, made in Swift. You can use it in place of the UIPageControl in your app.
-
 ## Overview
 
-<img src="https://giphy.com/gifs/iB4kDPu6xB8VeC8D06">
+This is an animated  subclass of UIPageControl, made in Swift. You can use it in place of any page control in your app.
 
+Inspired by [Oleg Frolov dribbble creation](https://dribbble.com/shots/5254763-Page-Indicator-Exploration)
+
+
+<img src="PageIndicator/Images/PageIndicator.gif">
+
+## Requirements
+
+* iOS 8.0+
+* Xcode 8+
+* Swift 3
 
 ## Installing
 
 To use this Page Control, just add the file 'AnimatedPageControl' to your project.
 
-Then in your PageViewController you can simply add:
-
-``` swift
-var pageControl = AnimatedPageControl()
-```
-
 You can also take a look to the PageViewController in this project to correct initialize the custom PageControl.
 
-
-## Acknowledgments
-
-Inspired by [Oleg Frolov dribbble creation](https://dribbble.com/shots/5254763-Page-Indicator-Exploration)
+## License
+CHIPageControl is released under the MIT license. See [LICENSE](./LICENSE) for details.
