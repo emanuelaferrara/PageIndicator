@@ -1,10 +1,10 @@
-# Page Control Transition
+# Animated Page Control
 
 This is a custom animated Page Control, made in Swift. You can use it in place of the UIPageControl in your app.
 
 ## Overview
 
-<!--- <img src="Images/demo.gif" width="600" height="450"> -->
+<!--- <img src="https://giphy.com/gifs/iB4kDPu6xB8VeC8D06"> -->
 
 
 ## Installing
