@@ -78,6 +78,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E3829AFD2210AB1D00A07B99 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		E3D098EA2200DE4A003115EA = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +108,7 @@
 		E3D098F52200DE4A003115EA /* PageIndicator */ = {
 			isa = PBXGroup;
 			children = (
+				E3829AFD2210AB1D00A07B99 /* Images */,
 				E3D099262200E128003115EA /* PageViewController.swift */,
 				E3D099282200E37B003115EA /* AnimatedPageControl.swift */,
 				E3D098F62200DE4A003115EA /* AppDelegate.swift */,
