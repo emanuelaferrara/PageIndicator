@@ -4,7 +4,7 @@ This is a custom animated Page Control, made in Swift. You can use it in place o
 
 ## Overview
 
-<img src="PageIndicator/Images/PageIndicator.gif" width="600" height="450">
+<img src="PageIndicator/Images/PageIndicator.gif">
 
 
 ## Installing
