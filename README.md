@@ -7,7 +7,7 @@ This is an animated  subclass of UIPageControl, made in Swift. You can use it in
 Inspired by [Oleg Frolov dribbble creation](https://dribbble.com/shots/5254763-Page-Indicator-Exploration)
 
 
-<img src="PageIndicator/Images/PageIndicator.gif">
+<img src="Images/PageIndicator.gif">
 
 ## Requirements
 
