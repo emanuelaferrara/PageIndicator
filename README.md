@@ -8,6 +8,11 @@ Inspired by [Oleg Frolov dribbble creation](https://dribbble.com/shots/5254763-P
 
 <img src="PageIndicator/Images/PageIndicator.gif">
 
+## Requirements
+
+* iOS 8.0+
+* Xcode 8+
+* Swift 3
 
 ## Installing
 
