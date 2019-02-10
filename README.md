@@ -4,7 +4,7 @@ This is a custom animated Page Control, made in Swift. You can use it in place o
 
 ## Overview
 
-<!--- <img src="https://giphy.com/gifs/iB4kDPu6xB8VeC8D06"> -->
+<img src="https://giphy.com/gifs/iB4kDPu6xB8VeC8D06">
 
 
 ## Installing
