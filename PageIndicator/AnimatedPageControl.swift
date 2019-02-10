@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewPageControl: UIPageControl {
+class AnimatedPageControl: UIPageControl {
     var indicator = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     var progress: CGFloat = 0 {
         didSet {

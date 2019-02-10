@@ -15,7 +15,7 @@
 		E3D0990C2200DE4B003115EA /* PageIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D0990B2200DE4B003115EA /* PageIndicatorTests.swift */; };
 		E3D099172200DE4B003115EA /* PageIndicatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D099162200DE4B003115EA /* PageIndicatorUITests.swift */; };
 		E3D099272200E128003115EA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D099262200E128003115EA /* PageViewController.swift */; };
-		E3D099292200E37B003115EA /* NewPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D099282200E37B003115EA /* NewPageControl.swift */; };
+		E3D099292200E37B003115EA /* AnimatedPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D099282200E37B003115EA /* AnimatedPageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		E3D099162200DE4B003115EA /* PageIndicatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorUITests.swift; sourceTree = "<group>"; };
 		E3D099182200DE4B003115EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D099262200E128003115EA /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		E3D099282200E37B003115EA /* NewPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPageControl.swift; sourceTree = "<group>"; };
+		E3D099282200E37B003115EA /* AnimatedPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				E3D099262200E128003115EA /* PageViewController.swift */,
-				E3D099282200E37B003115EA /* NewPageControl.swift */,
+				E3D099282200E37B003115EA /* AnimatedPageControl.swift */,
 				E3D098F62200DE4A003115EA /* AppDelegate.swift */,
 				E3D098FA2200DE4A003115EA /* Main.storyboard */,
 				E3D098FD2200DE4A003115EA /* Assets.xcassets */,
@@ -265,7 +265,7 @@
 				E3D099272200E128003115EA /* PageViewController.swift in Sources */,
 				E3D098F72200DE4A003115EA /* AppDelegate.swift in Sources */,
 				E3C24D362203682B00E403D0 /* DesignableView.swift in Sources */,
-				E3D099292200E37B003115EA /* NewPageControl.swift in Sources */,
+				E3D099292200E37B003115EA /* AnimatedPageControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
