@@ -82,7 +82,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         // The total number of pages that are available is based on how many available colors we have.
         pageControl = AnimatedPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
         self.pageControl.numberOfPages = orderedViewControllers.count
-        self.pageControl.tintColor = UIColor.red
         self.pageControl.pageIndicatorTintColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.5)
         self.pageControl.currentPageIndicatorTintColor = UIColor.white
         self.pageControl.currentPage = 0
