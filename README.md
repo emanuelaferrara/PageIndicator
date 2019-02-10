@@ -22,4 +22,4 @@ To use this Page Control, just add the file 'AnimatedPageControl' to your projec
 You can also take a look to the PageViewController in this project to correct initialize the custom PageControl.
 
 ## License
-CHIPageControl is released under the MIT license. See [LICENSE](./LICENSE) for details.
+AnimatedPageControl is released under the MIT license. See [LICENSE](./LICENSE) for details.
